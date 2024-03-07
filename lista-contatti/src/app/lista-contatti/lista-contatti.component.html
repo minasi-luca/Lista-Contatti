@@ -1,0 +1,11 @@
+<!-- lista-contatti.component.html -->
+<div *ngFor="let contatto of contatti" class="contatto" [ngStyle]="{ 'background-color': contatto.colorePreferito }">
+    <img [src]="'assets/' + (contatto.isOnline ? 'online.png' : 'offline.png')" alt="Stato online/offline">
+    <div>
+      <p>{{ contatto.nome }} {{ contatto.cognome }}</p>
+      <p>{{ contatto.numeroTelefono }}</p>
+    </div>
+    <div *ngIf="contatto.isOnline" class="online-dot"></div>
+    <div *ngIf="!contatto.isOnline" class="offline-dot"></div>
+  </div>
+  
